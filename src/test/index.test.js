@@ -48,8 +48,7 @@ describe('Customer Invitation', () => {
 
         it('Should log error for Incorrect File Path', async () => {
             await customer.getCustomersForInvitation('xyz.json', distance, latitude, longitude)
-            const errMsg = 'Inside readFile - ENOENT: no such file or directory, open \'xyz.json\''
-            expect(console.error).toHaveBeenCalledWith(errMsg)
+            expect(console.error).toHaveBeenCalled()
         })
 
         it('Should log error for Empty File Path', async () => {
